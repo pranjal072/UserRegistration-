@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 echo "USER REGISTRATION:"
 
@@ -16,7 +16,6 @@ FNpattern="^[A-Z]{1}[A-Za-z]{2,}$"
 LNpattern="^[A-Z]{1}[A-Za-z]{2,}$"
 Epattern="^[0-9A-Za-z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]{1,}([.][a-zA-Z]{2,3}){1,2}$"
 Mpattern="^[0-9]{2} [0-9]{10}$"
-Ppattern="^.{8,}"
 
 #FIRST NAME
 if [[ $Fname =~ $FNpattern ]]
@@ -51,7 +50,7 @@ else
 fi
 
 #PASSWORD
-if [[ $pass =~ $Ppattern ]]
+if [[ ${#pass} -ge 8 && "$pass" =~ [[:upper:]] ]]
 then
    echo "Password is Valid"
 else
