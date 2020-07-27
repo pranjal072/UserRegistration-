@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 echo "USER REGISTRATION:"
 
@@ -9,7 +9,7 @@ read -p "Enter First Name (Start with capital and min 3 characters) : " Fname
 read -p "Enter Last Name (Start with capital and min 3 characters) : " Lname
 read -p "Enter EMAIL ( Eg: xyz.abc@bl.co.in ): " Email
 read -p "Enter Mobile Number with Country code  ( Eg: 91 9087654321 ): " Mnum
-read -p "Enter Password ( Min 8 Characters ): " pass
+read -p "Enter Password ( Min 8 Characters, Atleast 1 uppercase and 1 number, Exactly 1 speacial char(!@#$%&) ): " pass
 
 #PATTERNS
 FNpattern="^[A-Z]{1}[A-Za-z]{2,}$"
