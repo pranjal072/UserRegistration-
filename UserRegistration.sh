@@ -16,6 +16,7 @@ FNpattern="^[A-Z]{1}[A-Za-z]{2,}$"
 LNpattern="^[A-Z]{1}[A-Za-z]{2,}$"
 Epattern="^[0-9A-Za-z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]{1,}([.][a-zA-Z]{2,3}){1,2}$"
 Mpattern="^[0-9]{2} [0-9]{10}$"
+PSpattern="^[A-Za-z0-9]*[@#!$%&]{1}[A-Za-z0-9]*$"
 
 #FIRST NAME
 if [[ $Fname =~ $FNpattern ]]
@@ -49,8 +50,9 @@ else
    echo "Moblie Number is Invalid"
 fi
 
+
 #PASSWORD
-if [[ ${#pass} -ge 8 && "$pass" =~ [[:upper:]] && "$pass" =~ [0-9]+ ]]
+if [[ ${#pass} -ge 8 && "$pass" =~ [[:upper:]] && "$pass" =~ [0-9]+ && "$pass" =~ $PSpattern ]]
 then
    echo "Password is Valid"
 else
