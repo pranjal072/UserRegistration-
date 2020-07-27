@@ -50,7 +50,7 @@ else
 fi
 
 #PASSWORD
-if [[ ${#pass} -ge 8 && "$pass" =~ [[:upper:]] ]]
+if [[ ${#pass} -ge 8 && "$pass" =~ [[:upper:]] && "$pass" =~ [0-9]+ ]]
 then
    echo "Password is Valid"
 else
